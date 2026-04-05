@@ -3,16 +3,28 @@ const allLists = []
 const addItem = () => {
     // Get users input
     const input = document.getElementById('userInput').value
-    
+
     // Input Validation
     if (input.trim() == '') {
         alert("Please enter a valid input!")
     }
 
     else {
-        // Store user input in array
-        allLists.push(input)
+        allLists.push(input) // Store user input in array
 
-        emptyState.innerHTML = ''
+        listGroup.innerHTML = ''
+
+        for (i = 0; i < allLists.length; i++) {
+            listGroup.innerHTML += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="todo1" />
+                    <label class="form-check-label" for="todo1">Learn arrays</label>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                    <button class="btn btn-sm btn-outline-danger" type="button">Delete</button>
+                </div>
+            </li>`
+        }
     }
 }
