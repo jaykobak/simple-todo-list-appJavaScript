@@ -1,5 +1,7 @@
 const allLists = []
 
 const addItem = () => {
-    console.log("This is working")
+    // Get users input
+    const input = document.getElementById('userInput').value
+    console.log(input)
 }
