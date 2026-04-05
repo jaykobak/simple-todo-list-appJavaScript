@@ -11,6 +11,15 @@ body {
   max-width: 600px;
 }
 
+.empty-state {
+  border-style: dashed;
+}
+
+.empty-icon {
+  font-size: 2rem;
+  color: #6c757d;
+}
+
 @media (max-width: 576px) {
   .todo-wrapper {
     max-width: 100%;
