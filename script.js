@@ -33,6 +33,10 @@ const deleteItem = (index) => {
     }
 }
 
+const editItem = (index) => {
+    console.log("Hello world")
+}
+
 function displayAllLists() {
     if (allLists.length == 0) {
         listGroup.innerHTML = `<li class="list-group-item empty-state text-center py-4">
@@ -51,7 +55,7 @@ function displayAllLists() {
                     <label class="form-check-label" for="todo${i + 1}">${allLists[i]}</label>
                 </div>
                 <div>
-                    <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
+                    <button onclick="editItem(${i})" class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#editTodoModal">Edit</button>
                     <button onclick="deleteItem(${i})" class="btn btn-sm btn-outline-danger" type="button">Delete</button>
                 </div>
             </li>`
