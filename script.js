@@ -34,7 +34,8 @@ const deleteItem = (index) => {
 }
 
 const editItem = (index) => {
-    console.log("Hello world")
+    // Prefill the input box
+    editTaskInput.value = allLists[index]
 }
 
 function displayAllLists() {
