@@ -18,6 +18,19 @@ const addItem = () => {
     }
 }
 
+const deleteItem = (index) => {
+    const userConfirmation = confirm("Are you sure you want to delete this item?")
+
+    if (userConfirmation) {
+        allLists.splice(index, 1) // Remove item from array
+        displayAllLists()
+    }
+
+    else {
+        displayAllLists()
+    }
+}
+
 function displayAllLists() {
     listGroup.innerHTML = ''
 
@@ -29,7 +42,7 @@ function displayAllLists() {
                 </div>
                 <div>
                     <button class="btn btn-sm btn-outline-secondary" type="button">Edit</button>
-                    <button class="btn btn-sm btn-outline-danger" type="button">Delete</button>
+                    <button onclick="deleteItem(${i})" class="btn btn-sm btn-outline-danger" type="button">Delete</button>
                 </div>
             </li>`
     }
