@@ -1,6 +1,7 @@
 const allLists = []
 // Display all items to the screen
 displayAllLists()
+let editItemIndex;
 
 const addItem = () => {
     // Get users input
@@ -34,8 +35,25 @@ const deleteItem = (index) => {
 }
 
 const editItem = (index) => {
+    editItemIndex = index
     // Prefill the input box
     editTaskInput.value = allLists[index]
+}
+
+const saveChanges = () => {
+    // Get users edited input
+    const updatedInput = document.getElementById('editTaskInput').value
+
+    // Input Validation
+    if (updatedInput.trim() == '') {
+        displayAllLists()
+    }
+
+    else {
+        allLists.splice(editItemIndex, 1, updatedInput) // update array with new user input
+
+        displayAllLists()
+    }
 }
 
 function displayAllLists() {
